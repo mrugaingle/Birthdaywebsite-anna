@@ -20,10 +20,10 @@ const CONFIG = {
   from: "— Your friends",
 
   photos: [
-    { file: "photo1.jpg", caption: "the trip that started it all" },
-    { file: "photo2.jpg", caption: "worst haircut, best year" },
-    { file: "photo3.jpg", caption: "3am diner run" },
-    { file: "photo4.jpg", caption: "" },
+    { file: "photo1.jpeg", caption: "25 September 2025: random moustache anna" },
+    { file: "WhatsApp Image 2026-09-12 at 19.21.18", caption: "Sunny Pahad" },
+    { file: "WhatsApp Image 2026-09-12 at 19.22.03", caption: "Anna for Sale" },
+    { file: "WhatsApp Image 2026-09-12 at 19.22.49", caption: "Ganesh Chaturthi 2025: Love, Daisy" },
     { file: "photo5.jpg", caption: "birthday #22 apparently" },
     { file: "photo6.jpg", caption: "we still don't know why we're laughing" },
     { file: "photo7.jpg", caption: "" },
