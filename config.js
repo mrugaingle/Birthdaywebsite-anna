@@ -25,7 +25,7 @@ const CONFIG = {
     { file: "photo3.jpeg", caption: "Anna for Sale" },
     { file: "photo4.jpeg", caption: "Ek Passport photo toh banta hai" },
     { file: "photo5.jpeg", caption: "Ganesh Chaturthi 2025: Love, Daisy" },
-    { file: "photo6.jpeg", caption: "we still don't know why we're laughing" },
+    { file: "photo6.jpeg", caption: "22 September 25: Don" },
     { file: "photo7.jpeg", caption: "Gharghuti Ganesh Chathurti" },
     { file: "photo8.jpeg", caption: "Sabka Anna" },
     { file: "photo9.jpg", caption:"MAN'S 20 LESSGOOOOO"}
