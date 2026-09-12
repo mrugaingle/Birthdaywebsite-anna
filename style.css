@@ -1,0 +1,257 @@
+:root {
+  --board-a: #f1e6f4;
+  --board-b: #eef2e6;
+  --board-line: rgba(255, 255, 255, 0.55);
+  --ink: #4a3b47;
+  --ink-soft: #6b5b66;
+  --paper: #fffdf8;
+  --paper-edge: #e8e0d2;
+  --pin-coral: #e8897d;
+  --pin-sage: #8fae9c;
+  --pin-mustard: #e3b23c;
+  --tape-pink: rgba(232, 179, 194, 0.75);
+  --tape-blue: rgba(168, 199, 214, 0.75);
+  --tape-yellow: rgba(233, 210, 148, 0.75);
+  --string: #b9a48f;
+  --shadow: rgba(60, 45, 55, 0.28);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #e9e2ec;
+}
+
+body {
+  font-family: 'Fraunces', serif;
+  color: var(--ink);
+}
+
+.board {
+  position: relative;
+  width: 100%;
+  min-height: 1600px;
+  padding: 40px 0 120px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35), transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(255,255,255,0.3), transparent 45%),
+    repeating-linear-gradient(135deg, var(--board-a) 0px, var(--board-a) 3px, var(--board-b) 3px, var(--board-b) 6px);
+}
+
+.board::before {
+  /* subtle woven / felt texture using layered dots */
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size: 6px 6px;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}
+
+/* ---------- Banner ---------- */
+
+.banner {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 10px auto 60px;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.banner-title {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  color: var(--ink);
+  text-align: center;
+  margin: 0;
+  transform: rotate(-2deg);
+  line-height: 1.05;
+  text-shadow: 0 2px 0 rgba(255,255,255,0.4);
+}
+
+.banner-name {
+  display: block;
+  font-size: 0.85em;
+  color: var(--pin-coral);
+}
+
+.banner-strip {
+  display: none;
+}
+
+/* ---------- Handwritten note ---------- */
+
+.note {
+  position: relative;
+  z-index: 6;
+  width: 260px;
+  margin: 0 auto 70px;
+  padding: 26px 22px 20px;
+  background: var(--paper);
+  border: 1px solid var(--paper-edge);
+  box-shadow: 3px 6px 14px var(--shadow);
+  transform: rotate(-3deg);
+}
+
+.note-pin {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #f3a99d, var(--pin-coral) 70%);
+  box-shadow: 0 3px 4px rgba(0,0,0,0.35);
+}
+
+.note-message {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  margin: 6px 0 14px;
+  color: var(--ink);
+}
+
+.note-from {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  text-align: right;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ---------- Photos ---------- */
+
+.photos {
+  position: relative;
+  z-index: 4;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 900px;
+}
+
+.photo-card {
+  position: absolute;
+  background: var(--paper);
+  padding: 12px 12px 34px;
+  box-shadow: 4px 8px 18px var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 220px;
+}
+
+.photo-card:hover {
+  transform: scale(1.06) rotate(0deg) !important;
+  box-shadow: 6px 14px 26px var(--shadow);
+  z-index: 50;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #ddd;
+}
+
+.photo-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-top: 8px;
+  padding: 0 4px;
+}
+
+/* pin variant */
+.pin-dot {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  box-shadow: 0 3px 4px rgba(0,0,0,0.35);
+  z-index: 2;
+}
+
+.pin-coral { background: radial-gradient(circle at 35% 30%, #f3a99d, var(--pin-coral) 70%); }
+.pin-sage  { background: radial-gradient(circle at 35% 30%, #b9d3c3, var(--pin-sage) 70%); }
+.pin-mustard { background: radial-gradient(circle at 35% 30%, #f2cd7a, var(--pin-mustard) 70%); }
+
+/* tape variant */
+.tape {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 70px;
+  height: 26px;
+  opacity: 0.85;
+  z-index: 2;
+}
+
+.tape::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.25) 0 4px, transparent 4px 8px);
+}
+
+.tape-pink { background: var(--tape-pink); }
+.tape-blue { background: var(--tape-blue); }
+.tape-yellow { background: var(--tape-yellow); }
+
+/* ---------- Strings ---------- */
+
+.strings {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.strings path {
+  fill: none;
+  stroke: var(--string);
+  stroke-width: 2;
+  opacity: 0.7;
+}
+
+/* ---------- Footer ---------- */
+
+.credit {
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  padding: 24px 0 34px;
+  background: #e9e2ec;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  .board { padding-top: 24px; }
+  .banner-title { font-size: clamp(2.2rem, 9vw, 3rem); }
+  .photo-card { width: 165px; }
+  .photo-card img { height: 165px; }
+  .note { width: 210px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-card { transition: none; }
+}
