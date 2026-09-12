@@ -62,7 +62,7 @@
 
     // radius grows with photo count, but stays inside the available width
     const maxRadius = canvasWidth / 2 - cardWidth / 2 - 10;
-    const wantedRadius = cardWidth * 0.85 + count * 20;
+    const wantedRadius = cardWidth * 1.15 + count * 20;
     const radius = Math.max(cardWidth * 0.75, Math.min(maxRadius, wantedRadius));
 
     const canvasHeight = radius * 2 + cardH + 40;
