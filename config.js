@@ -15,9 +15,9 @@
 */
 
 const CONFIG = {
-  name: "Alex",
-  message: "Happy birthday! Here's to another year of adventures, bad jokes, and cake at 2am. Love you lots.",
-  from: "— Your friends",
+  name: "Aadhithya",
+  message: "Happy birthday! Here's to another year of adventures, bad jokes, and memes. Lots of love :))",
+  from: "— Mruga",
 
   photos: [
     { file: "photo1.jpeg", caption: "25 September 2025: random moustache anna" },
